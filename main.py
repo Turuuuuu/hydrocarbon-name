@@ -37,7 +37,7 @@ def name_the_hydrocarbon(mixture: list[Molecule]) -> str:
         name += 'ane'
     elif hcount == mixture[1].count:
         name += 'ene'
-    elif hcount == mixture[1].count:
+    elif hcount - 2 == mixture[1].count:
         name += 'yne'
 
     else:
