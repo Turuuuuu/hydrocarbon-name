@@ -33,15 +33,18 @@ def name_the_hydrocarbon(mixture: list[Molecule]) -> str:
     name = prefixes[mixture[0].count]
     hcount = mixture[0].count * 2
 
-    if hcount + 2 == mixture[1].count:
+    # plz fix
+    # dangerous code, don't touch.
+    # it barely works
+    if hcount + 1 == mixture[1].count and mixture[2] == Molecule('O', 1) and mixture[3] == Molecule('H', 1):
+        name += 'anol'
+    
+    elif hcount + 2 == mixture[1].count:
         name += 'ane'
     elif hcount == mixture[1].count:
         name += 'ene'
     elif hcount - 2 == mixture[1].count:
         name += 'yne'
-    # plz fix
-    elif hcount + 1 == mixture[1].count and Molecule('O',1) == mixture[2] and Molecule('H',1) == mixture[3]:
-        name += 'anol'
 
     else:
         print('Invalid')
