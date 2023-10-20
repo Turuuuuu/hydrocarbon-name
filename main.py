@@ -39,6 +39,9 @@ def name_the_hydrocarbon(mixture: list[Molecule]) -> str:
         name += 'ene'
     elif hcount - 2 == mixture[1].count:
         name += 'yne'
+    # plz fix
+    elif hcount + 1 == mixture[1].count and Molecule('O',1) == mixture[2] and Molecule('H',1) == mixture[3]:
+        name += 'anol'
 
     else:
         print('Invalid')
